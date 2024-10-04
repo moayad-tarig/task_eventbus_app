@@ -68,7 +68,7 @@ class _GlobalListTileState extends State<GlobalListTile>
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: ListTile(
-          title: const Text('Item'),
+          title: Text('Item ${widget.index}'),
           onTap: () {},
           leading: Gif(
               image: const AssetImage('assets/image.gif'),

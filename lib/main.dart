@@ -12,7 +12,8 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData(appBarTheme: const AppBarTheme(color: Colors.blueAccent)),
+      theme:
+          ThemeData(appBarTheme: const AppBarTheme(color: Colors.blueAccent)),
       debugShowCheckedModeBanner: false,
       home: Builder(builder: (context) {
         return Scaffold(
@@ -36,23 +37,41 @@ class MainApp extends StatelessWidget {
               Image.asset(
                 'assets/image.gif',
               ),
+              const SizedBox(
+                height: 20,
+              ),
               TextButton(
+                style: ButtonStyle(
+                  backgroundColor: WidgetStateProperty.all(Colors.blueAccent),
+                ),
                 onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const GlobalTimerScreen()));
                 },
-                child: const Text('click here for Global Timer'),
+                child: const Text(
+                  'click here for Global Timer',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              const SizedBox(
+                height: 10,
               ),
               TextButton(
+                  style: ButtonStyle(
+                    backgroundColor: WidgetStateProperty.all(Colors.blueAccent),
+                  ),
                   onPressed: () {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => const SingleTimerScreen()));
                   },
-                  child: const Text('click here for Single Timer ')),
+                  child: const Text(
+                    'click here for Single Timer ',
+                    style: TextStyle(color: Colors.white),
+                  )),
             ],
           ),
         );
