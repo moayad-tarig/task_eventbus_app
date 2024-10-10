@@ -6,7 +6,10 @@ This Flutter application demonstrates a list of items, each containing its own c
 
 - **Event Bus**: Uses an event bus to emit countdown events and update the UI efficiently without unnecessary rebuilds.
 - **Countdown Timer**: Each list item features an independent countdown timer that starts when the item becomes visible on the screen.
-- **GIF Animation**: Displays a GIF animation for each list item, which plays only when the item is visible.
+  - There are two types of timers in the application:
+    1. **Global Timer**: A shared global timer that all list items depend on. When the list appears on the screen, each item starts from the current global countdown time.
+    2. **Individual Timer**: A separate timer for each list item. When a list item becomes visible on the screen, it starts its own countdown timer. When it goes off-screen, the timer stops.
+- **GIF Animation**: Displays a GIF animation for each list item, which plays only when the item is visible on the screen.
 - **Visibility Detection**: Utilizes the `VisibilityDetector` package to manage the visibility of each list item, ensuring performance optimizations.
 
 ## images 
